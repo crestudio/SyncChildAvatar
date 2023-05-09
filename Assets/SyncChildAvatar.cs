@@ -35,19 +35,21 @@ namespace VRSuya.SyncChildAvatar {
 			Debug.Log("[VRSuya SyncChildAvatar] Synced All Child Avatars");
 		}
 
-		// VRC 아바타 리스트 반환
+		/// <summary>Scene에서 활성화 상태인 VRC AvatarDescriptor 컴포넌트를 가지고 있는 아바타 목록을 반환합니다.</summary>
+		/// <returns>활성화 상태인 VRC 아바타 목록</returns>
 		private static List<VRC_AvatarDescriptor> GetVRCAvatarList() {
 			List<VRC_AvatarDescriptor> AllVRCAvatars = VRC.Tools.FindSceneObjectsOfTypeAll<VRC_AvatarDescriptor>().ToList();
             List<VRC_AvatarDescriptor> VRCAvatars = AllVRCAvatars.Where(Avatar => Avatar.gameObject.activeInHierarchy).ToList();
 			return VRCAvatars;
 		}
 
-		// 아마추어 휴머노이드 본 리스트 반환
+		/// <summary>Unity의 HumanBodyBones 유형의 모든 본 Enum을 반환합니다.</summary>
+		/// <returns>HumanBodyBones의 모든 본 Enum</returns>
 		private static List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
 		}
 
-		// Rotation Constraint 및 Position Constraint 생성 및 연결
+		/// <summary>요청한 부모 애니메이터와 자식 애니메이터를 휴머노이드 본 목록에 맞춰, 회전 제약과 엉덩이 본에 한정해서 위치 제약 컴포넌트를 추가하고 연결합니다.</summary>
 		private static void CreateConstraintComponents(Animator ParentAnimator, Animator ChildAnimator, List<HumanBodyBones> HumanBodyBoneList) {
 			if (ParentAnimator == ChildAnimator) return;
 			foreach (HumanBodyBones Bone in HumanBodyBoneList) {
@@ -68,7 +70,8 @@ namespace VRSuya.SyncChildAvatar {
 			}
 		}
 
-		// 컴포넌트 검사 메소드
+		/// <summary>요청한 유형의 컴포넌트가 존재하는지 확인하고 존재하지 않는다면 생성해서 반환합니다.</summary>
+		/// <returns>요청한 유형 컴포넌트</returns>
 		private static TargetComponent GetOrCreateComponent<TargetComponent>(GameObject TargetGameObject) where TargetComponent : Component {
             TargetComponent Component = TargetGameObject.GetComponent<TargetComponent>();
 			if (!Component) Component = TargetGameObject.AddComponent<TargetComponent>();
