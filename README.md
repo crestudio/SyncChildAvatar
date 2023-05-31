@@ -1,6 +1,9 @@
 # SyncChildAvatar
 
+<<<<<<< HEAD
 ![Menu](https://github.com/crestudio/SyncChildAvatar/blob/master/Image/VRSuya_SyncChildAvatar.jpg?raw=true)
+=======
+>>>>>>> c964abece17f596fd0491ee10ac24fdc503e1916
 
 ## 다운로드
 
