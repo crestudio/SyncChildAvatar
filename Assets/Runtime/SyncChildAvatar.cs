@@ -16,7 +16,7 @@ using VRC.SDKBase;
  * Thanks to Dalgona.
  */
 
-namespace VRSuya.SyncChildAvatar {
+namespace com.vrsuya.syncchildavatar {
 
 	public class SyncChildAvatar : EditorWindow {
 
