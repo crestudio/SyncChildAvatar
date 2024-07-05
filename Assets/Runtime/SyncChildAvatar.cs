@@ -18,6 +18,7 @@ using VRC.SDKBase;
 
 namespace com.vrsuya.syncchildavatar {
 
+	[ExecuteInEditMode]
 	public class SyncChildAvatar : EditorWindow {
 
 		[MenuItem("Tools/VRSuya/Sync All Child Avatar Bone")]
