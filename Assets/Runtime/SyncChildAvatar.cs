@@ -28,7 +28,7 @@ namespace com.vrsuya.syncchildavatar {
 			foreach (var VRCAvatar in VRCAvatars) {
                 Animator ParentAvatarAnimator = VRCAvatar.GetComponent<Animator>();
 				if (!ParentAvatarAnimator) continue;
-                Animator[] ChildAvatarAnimator = VRCAvatar.GetComponentsInChildren<Animator>();
+                Animator[] ChildAvatarAnimator = VRCAvatar.GetComponentsInChildren<Animator>(true);
 				foreach (var ChildAnimator in ChildAvatarAnimator) {
 					CreateConstraintComponents(ParentAvatarAnimator, ChildAnimator, HumanBodyBoneList);
 				}
