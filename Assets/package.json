@@ -1,6 +1,6 @@
 {
   "name": "com.vrsuya.syncchildavatar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "VRSuya - Sync Child Avatar",
   "description": "Sync all child humanoid avatar movement",
   "unity": "2019.4",
